@@ -1,14 +1,20 @@
 #include <stdio.h>
 
-int main() {
-    int num;
+int main()
+ {
+    int n, r = 0, digit;
 
     printf("Enter a number: ");
-    scanf("%d", &num);
+    scanf("%d", &n);
 
-    for(int i = 1; i <= 10; i++) {
-        printf("%d x %d = %d\n", num, i, num * i);
+    while(n != 0) 
+    {
+        digit = n % 10;
+        r = r * 10 + digit;
+        n = n / 10;
     }
+
+    printf("Reversed number = %d", r);
 
     return 0;
 }
